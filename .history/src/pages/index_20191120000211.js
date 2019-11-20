@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Icon from "../components/icon"
 
 import ballSnd from "../assets/baseball.mp3"
-import ferrySnd from "../assets/ferryBldg.mp3"
 import keysSnd from "../assets/clubDeluxe.mp3"
 import muniSnd from "../assets/muni.mp3"
 import prideSnd from "../assets/pride.mp3"
@@ -15,14 +14,13 @@ class IndexPage extends React.Component {
   render () {
     return (
       <Layout>
-        <section className='grid'>
+        <section>
           <Icon
             imgSrc={this.props.data.ballImg.childImageSharp.fluid}
             audioSrc={ballSnd}
           />
           <Icon
             imgSrc={this.props.data.ferryImg.childImageSharp.fluid}
-            audioSrc={ferrySnd}
           />
           <Icon
             imgSrc={this.props.data.keyImg.childImageSharp.fluid}

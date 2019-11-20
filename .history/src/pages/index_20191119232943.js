@@ -4,41 +4,29 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import Icon from "../components/icon"
 
-import ballSnd from "../assets/baseball.mp3"
-import ferrySnd from "../assets/ferryBldg.mp3"
-import keysSnd from "../assets/clubDeluxe.mp3"
-import muniSnd from "../assets/muni.mp3"
-import prideSnd from "../assets/pride.mp3"
-import wavesSnd from "../assets/waves.mp3"
-
 class IndexPage extends React.Component {
   render () {
     return (
       <Layout>
-        <section className='grid'>
+        <section>
           <Icon
             imgSrc={this.props.data.ballImg.childImageSharp.fluid}
-            audioSrc={ballSnd}
+            audioSrc={this.props.data.}
           />
           <Icon
             imgSrc={this.props.data.ferryImg.childImageSharp.fluid}
-            audioSrc={ferrySnd}
           />
           <Icon
             imgSrc={this.props.data.keyImg.childImageSharp.fluid}
-            audioSrc={keysSnd}
           />
           <Icon
             imgSrc={this.props.data.nImg.childImageSharp.fluid}
-            audioSrc={muniSnd}
           />
           <Icon
             imgSrc={this.props.data.prideImg.childImageSharp.fluid}
-            audioSrc={prideSnd}
           />
           <Icon
             imgSrc={this.props.data.wavesImg.childImageSharp.fluid}
-            audioSrc={wavesSnd}
           />
         </section>
       </Layout>
@@ -57,6 +45,7 @@ export const pageQuery = graphql`
         }
       }
     },
+    ballSnd: file(relativePath: { eq: "baseball.mp3" }),
     ferryImg: file(relativePath: { eq: "ICON_ferry.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -71,6 +60,7 @@ export const pageQuery = graphql`
         }
       }
     },
+    keySnd: file(relativePath: { eq: "clubDeluxe.mp3" }),
     nImg: file(relativePath: { eq: "ICON_N.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -78,6 +68,7 @@ export const pageQuery = graphql`
         }
       }
     },
+    nSnd: file(relativePath: { eq: "muni.mp3" }),
     prideImg: file(relativePath: { eq: "ICON_pride.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
@@ -85,12 +76,14 @@ export const pageQuery = graphql`
         }
       }
     },
+    prideSnd: file(relativePath: { eq: "pride.mp3" }),
     wavesImg: file(relativePath: { eq: "ICON_waves.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
-    }
+    },
+    wavesSnd: file(relativePath: { eq: "waves.mp3" }),
   }
 `

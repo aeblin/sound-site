@@ -1,0 +1,26 @@
+import React from 'react'
+import Img from 'gatsby-image'
+
+class Icon extends Component {
+  const audio = new Audio();
+
+  const setAndPlayAudio = (audioUrl) => {
+    audio.src = audioUrl;
+    audio.play();
+  };
+  render() {
+    return (
+      <div
+        className="icon"
+        onClick={setAndPlayAudio({props.audioSrc})
+      >
+        <Img
+          sizes={props.imgSrc}
+        />
+      </div>
+    );
+  }
+}
+
+
+export default Icon
