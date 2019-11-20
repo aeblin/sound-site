@@ -4,6 +4,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  background: #fde6ee;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -619,4 +620,13 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-gap: 1vw;
+}
+.icon {
+  cursor: pointer;
 }
